@@ -1,4 +1,5 @@
 .container {
+	margin-left: auto;
 	
 }
 
@@ -18,3 +19,9 @@ body {
 	margin-top: 20px;
 }
 
+.movies-container {
+	box-sizing: content-box;
+	background-color: lightgray;
+	
+	
+}

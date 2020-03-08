@@ -1,4 +1,4 @@
-var movieData = [
+var moviesData = [
 	{
 		Title: "The Dark Knight",
 		Year: "2008",
