@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     ${currentMovie.Title}
                     <p class="card-text">${currentMovie.Year}</p>
                     
-                    <a href="#" button onclick="saveToWatchlist('${currentMovie.imdbID}')"<Add</a>
+                    <a href="#" button onclick="saveToWatchlist('${currentMovie.imdbID}')">Add</a>
                 </div>
             </div>	
         </div>`
@@ -21,14 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
         //renderMovies(moviesData);
         })
 
-        saveToWatchlist(imdbID);
+        //saveToWatchlist(imdbID);
        
 
         //document.getElementById("movies-container")- Step 3, no.4. Trying to get my movie cards to show again.
 
-     
-        
-        
+        console.log(movieHTML) 
         return movieHTML;
     }
     //document.getElementsByClassName('movies-container')[0].addEventListener('click',function(event))
@@ -38,6 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit',function(e){
         e.preventDefault(0);
         console.log(e);
+
+        var srch = e.target.elements[0].value
+        console.log(srch);
+
+        var srchMov = moviesData.filter(function(e) {
+            return srchMov;
+        })
+    //created a .filter for the search function
      var x = document.getElementById("movies-container")   
      x.innerHTML = renderMovies(moviesData);
     })
