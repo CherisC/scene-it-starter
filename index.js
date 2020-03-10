@@ -1,6 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {    
+document.addEventListener('DOMContentLoaded', function() {  
+ 
     function renderMovies(movieArray) {
-        var movieHTML=movieArray.map(function(currentMovie){
+        var movieHTML = movieArray.map(function(currentMovie) {
+        
             return `<div class="Movie">
             <div class="card" style="width: 18rem;">
            
@@ -9,27 +11,33 @@ document.addEventListener('DOMContentLoaded', function() {
                     ${currentMovie.Title}
                     <p class="card-text">${currentMovie.Year}</p>
                     
-                    <a href="JavaScript:(0) onclick=button type=("${currentMovie.imdbID}")"<Add</a>
+                    <a href="#" button onclick="saveToWatchlist('${currentMovie.imdbID}')"<Add</a>
                 </div>
             </div>	
         </div>`
         //Successfully got my image to show on the page. Had left off a curly bracket on the template litteral.
         //Celebrating that success!
-        renderMovies(moviesData);
+        //Took the double quotes off of template literal for imdbID
+        //renderMovies(moviesData);
         })
-        //console.log(movieHTML.join(''));
+
+        saveToWatchlist(imdbID);
+       
 
         //document.getElementById("movies-container")- Step 3, no.4. Trying to get my movie cards to show again.
 
-        //var x = document.getElementById("movies-container")
+     
         
         
-        //return x.innerHTML = movieHTML.join('');
+        return movieHTML;
     }
+    //document.getElementsByClassName('movies-container')[0].addEventListener('click',function(event))
 
-    //renderMovies(moviesData);
-    document.getElementById("search-form").addEventListener("submit",function(e){
+    
+    var form = document.getElementById("search-form")
+    form.addEventListener('submit',function(e){
         e.preventDefault(0);
+        console.log(e);
      var x = document.getElementById("movies-container")   
      x.innerHTML = renderMovies(moviesData);
     })
